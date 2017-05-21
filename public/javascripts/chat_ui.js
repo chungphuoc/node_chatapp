@@ -1,8 +1,8 @@
 function divEscapedContentElement(message) {
-  return $('<div></div>').text(message);
+  return $('<li class="media list-group-item"></li>').text(message);
 }
 function divSystemContentElement(message) {
-  return $('<div></div>').html('<i>' + message + '</i>');
+  return $('<li class="media system-message"></li>').html('<i>' + message + '</i>');
 }
 
 function processUserInput(chatApp, socket) {
@@ -41,7 +41,7 @@ $(document).ready(function() {
   });
 
   socket.on('message', function(message){
-    var newElement = $('<div class="new-message"></div>').text(message.text);
+    var newElement = $('<div class="media system-message list-group-item"></div>').text(message.text);
     $('#messages').append(newElement);
   });
 
@@ -58,6 +58,11 @@ $(document).ready(function() {
       chatApp.processCommand('/join' + $(this).text());
       $('#send-message').focus();
     });
+  });
+
+  $('#chat-clear').click(function(e){
+    $('#messages').html('Cleared!<br>');
+    $('#send-message').focus();
   });
 
   setInterval(function() {

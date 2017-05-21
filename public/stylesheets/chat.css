@@ -1,6 +1,6 @@
 .blue { background: blue }
 .grey { background: grey }
-.chats-row { height: 100vh; }
+.chats-row { height: 100%; }
 .chats-row div {
     height: 50%;
     border: 1px solid #ddd;
@@ -46,3 +46,6 @@
 
 }
 
+.system-message{
+    color: green;
+}

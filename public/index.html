@@ -2,22 +2,80 @@
 <html lang='en'>
   <head>
     <title>Chat</title>
-    <link rel='stylesheet' href='/stylesheets/style.css'></link>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css'></link> -->
+    <link rel='stylesheet' href='/stylesheets/chat.css'></link>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
     <div id='content'>
-      <div id='room'></div>
-      <div id='messages'></div>
       <form id='send-form'>
-        <input id='send-message' />
-        <input id='send-button' type='submit' value='Send'/>
-        <div id='help'>
-          Chat commands:
-          <ul>
-            <li>Change nickname: <code>/nick [username]</code></li>
-            <li>Join/create room: <code>/join [room name]</code></li>
-            <li>Clear chatbox: <code>/clear</code></li>
-          </ul>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="row chats-row">
+                <div class="col-md-12">
+                  <div class="row current-chat-footer">
+                    <a href='#' class="list-group-item list-group-item-success" id='room'></a>
+                    <div class="input-group col-md-11" style="margin-left: 16px;">
+                      <input type="text" class="form-control" id='send-message'>
+                      <span class="input-group-btn">
+                      <input id='send-button' type='submit' value='Send' class="btn btn-default" />
+                      <!-- <button class="btn btn-default" type="button">Send</button> -->
+                      </span>
+                    </div>
+                    <ul>
+                      Chat commands:
+                      <li>Change nickname: <code>/nick [username]</code></li>
+                      <li>Join/create room: <code>/join [room name]</code></li>
+                      <li>Clear chatbox: <code>/clear</code></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9 current-chat">
+              <div class="row chat-toolbar-row">
+                <div class="col-sm-12">
+                  <div class="btn-group chat-toolbar" role="group" aria-label="...">
+                    <button id="chat-clear" class="btn btn-default ticket-option" type="button">
+                      <i class="glyphicon glyphicon-remove-sign"></i> Clear Chat
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="row current-chat-area">
+                <div class="col-md-12">
+                  <ul class="media-list" id='messages'>
+                    <!-- <li class="media">
+                      <div class="media-body">
+                        <div class="media">
+                          <a class="pull-left" href="#">
+                          <img class="media-object img-circle " src="https://app.teamsupport.com/dc/1078/UserAvatar/1839999/48/1470773165634">
+                          </a>
+                          <div class="media-body">
+                            Donec sit amet ligula enim. Duis vel condimentum massa.
+                            Donec sit amet ligula enim. Duis vel condimentum massa.Donec sit amet ligula enim.
+                            Duis vel condimentum massa.
+                            Donec sit amet ligula enim. Duis vel condimentum massa.
+                            <br>
+                            <small class="text-muted">Alex Deo | 23rd June at 5:00pm</small>
+                            <hr>
+                          </div>
+                        </div>
+                      </div>
+                    </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </form>
     </div>
